@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexo — Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="app" id="app">
+  <nav class="servers" id="serverList" aria-label="Servidores"></nav>
+
+  <aside class="sidebar" id="serverSidebar" aria-label="Canais">
+    <header class="sidebar__head">
+      <button class="sidebar__title" id="serverMenuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu do servidor">
+        <span id="serverName"></span><span aria-hidden="true">▾</span>
+      </button>
+      <div class="dropdown" id="serverMenu" hidden>
+        <button data-menu="channel">＋ Criar canal</button>
+        <button data-menu="profile">👤 Perfil</button>
+        <button data-menu="settings">⚙ Definições</button>
+      </div>
+    </header>
+    <div class="channels" id="channelList"></div>
+    <div class="userpanel" id="userPanel"></div>
+  </aside>
+
+  <main class="chat" aria-label="Chat">
+    <header class="chat__head" id="chatHeader"></header>
+    <div class="messages" id="messageList" role="log" aria-live="polite"></div>
+    <div class="composer-wrap">
+      <div class="replybar" id="replyBar" hidden></div>
+      <form class="composer" id="messageForm" autocomplete="off">
+        <button type="button" class="icon-btn" id="attachBtn" aria-label="Adicionar ficheiro">📎</button>
+        <input type="file" id="fileInput" hidden>
+        <input class="composer__input" id="messageInput" placeholder="Escreve uma mensagem…" aria-label="Mensagem">
+        <button type="button" class="icon-btn" id="gifBtn" aria-label="Enviar GIF">GIF</button>
+        <button type="button" class="icon-btn" id="emojiBtn" aria-label="Emoji" aria-expanded="false">😊</button>
+        <button class="icon-btn icon-btn--send" aria-label="Enviar">➤</button>
+        <div class="emoji-pop" id="emojiPop" hidden></div>
+      </form>
+    </div>
+  </main>
+
+  <aside class="members" id="memberList" aria-label="Membros"></aside>
+</div>
+<div class="scrim" id="scrim"></div>
+<div id="modalRoot"></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="js/app.js" defer></script>
+<script src="js/settings.js" defer></script>
+<script src="js/members.js" defer></script>
+<script src="js/chat.js" defer></script>
+<script src="js/navigation.js" defer></script>
+</body>
+</html>

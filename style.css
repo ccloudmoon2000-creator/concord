@@ -1,0 +1,10 @@
+/* Variáveis de design e reset */
+:root{--bg-0:#17181c;--bg-1:#1f2025;--bg-2:#272830;--bg-3:#33343e;--text:#e8e9ee;--muted:#9b9eab;--accent:#6c7bff;--accent-2:#5766e8;--ok:#3fb97c;--danger:#e5575f;--border:#ffffff14;--hover:#ffffff0f;--radius:8px;--shadow:0 6px 20px #0006;--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--server-w:72px;--side-w:240px;--members-w:240px;--t:.15s ease}
+[data-theme=light]{--bg-0:#dfe1e8;--bg-1:#eef0f5;--bg-2:#fff;--bg-3:#e6e8ef;--text:#1d1f27;--muted:#565a6b;--accent:#4a59dc;--accent-2:#3a48c2;--border:#0000001a;--hover:#0000000b;--shadow:0 6px 20px #0002}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font:15px/1.4 var(--font);background:var(--bg-0);color:var(--text);overflow:hidden}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}

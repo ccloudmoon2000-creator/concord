@@ -1,0 +1,18 @@
+/* Tablet: membros passam a gaveta */
+@media (max-width:900px){
+  .members{display:none;position:fixed;right:0;top:0;bottom:0;z-index:30;box-shadow:var(--shadow)}
+  .app.members-open .members{display:block}
+  .app.members-open~.scrim{display:block}
+}
+/* Telemóvel: servidores + canais passam a gaveta */
+@media (max-width:700px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .servers,.sidebar{position:fixed;top:0;bottom:0;z-index:30;transform:translateX(-110%);transition:transform .2s ease}
+  .servers{left:0;width:var(--server-w)}
+  .sidebar{left:var(--server-w);width:min(var(--side-w),calc(100vw - var(--server-w)))}
+  .app.nav-open .servers,.app.nav-open .sidebar{transform:none}
+  .app.nav-open~.scrim{display:block}
+  .nav-toggle{display:inline-flex}
+  .chat__topic{display:none}
+  .message{padding:2px 12px}.composer-wrap{padding:0 8px 8px}
+}
